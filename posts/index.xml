@@ -1,11 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Mackenzie Morgan</title>
-        <link>https://mackenzie.morgan.name/</link>
-        <description>Mackenzie Morgan</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 06 Nov 2020 03:09:31 -0500</lastBuildDate>
-            <atom:link href="https://mackenzie.morgan.name/index.xml" rel="self" type="application/rss+xml" />
-        <item>
+        <title>All Posts - Mackenzie Morgan</title>
+        <link>https://mackenzie.morgan.name/posts/</link>
+        <description>All Posts | Mackenzie Morgan</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 06 Nov 2020 03:09:31 -0500</lastBuildDate><atom:link href="https://mackenzie.morgan.name/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Django Admin color picker</title>
     <link>https://mackenzie.morgan.name/posts/django-admin-color-picker/</link>
     <pubDate>Fri, 06 Nov 2020 03:09:31 -0500</pubDate>

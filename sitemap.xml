@@ -2,15 +2,16 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://mackenzie.morgan.name/blog/</loc><lastmod>2020-11-06T03:09:31-05:00</lastmod></url><url>
             <loc>https://mackenzie.morgan.name/categories/</loc><lastmod>2020-11-06T03:09:31-05:00</lastmod></url><url>
             <loc>https://mackenzie.morgan.name/categories/code/</loc><lastmod>2020-11-06T03:09:31-05:00</lastmod></url><url>
             <loc>https://mackenzie.morgan.name/tags/django/</loc><lastmod>2020-11-06T03:09:31-05:00</lastmod></url><url>
-            <loc>https://mackenzie.morgan.name/blog/django-admin-color-picker/</loc><lastmod>2020-11-06T03:09:31-05:00</lastmod></url><url>
+            <loc>https://mackenzie.morgan.name/posts/django-admin-color-picker/</loc><lastmod>2020-11-06T03:09:31-05:00</lastmod></url><url>
             <loc>https://mackenzie.morgan.name/</loc><lastmod>2020-11-06T03:09:31-05:00</lastmod></url><url>
+            <loc>https://mackenzie.morgan.name/posts/</loc><lastmod>2020-11-06T03:09:31-05:00</lastmod></url><url>
             <loc>https://mackenzie.morgan.name/tags/</loc><lastmod>2020-11-06T03:09:31-05:00</lastmod></url><url>
-            <loc>https://mackenzie.morgan.name/blog/vision-racism-the-cross/</loc><lastmod>2020-06-07T13:08:39-05:00</lastmod></url><url>
+            <loc>https://mackenzie.morgan.name/posts/vision-racism-the-cross/</loc><lastmod>2020-06-07T13:08:39-05:00</lastmod></url><url>
             <loc>https://mackenzie.morgan.name/cv/</loc><lastmod>2020-06-07T13:08:39-05:00</lastmod></url><url>
             <loc>https://mackenzie.morgan.name/now/</loc><lastmod>2020-06-07T13:08:39-05:00</lastmod></url><url>
             <loc>https://mackenzie.morgan.name/tags/racism/</loc><lastmod>2020-06-07T13:08:39-05:00</lastmod></url><url>
-            <loc>https://mackenzie.morgan.name/categories/religion/</loc><lastmod>2020-06-07T13:08:39-05:00</lastmod></url></urlset>
+            <loc>https://mackenzie.morgan.name/categories/religion/</loc><lastmod>2020-06-07T13:08:39-05:00</lastmod></url><url>
+            <loc>https://mackenzie.morgan.name/tags/sermon/</loc><lastmod>2020-06-07T13:08:39-05:00</lastmod></url></urlset>
