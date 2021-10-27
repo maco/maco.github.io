@@ -17,7 +17,7 @@ Problem 1: relations to large tables are unwieldy If we let the Django Admin loa
 <meta name=application-name content="Mackenzie Morgan">
 <meta name=apple-mobile-web-app-title content="Mackenzie Morgan"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://mackenzie.morgan.name/posts/reusable-django-admin-filters/><link rel=prev href=https://mackenzie.morgan.name/posts/how-to-network/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Reusable Django Admin Filters","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/mackenzie.morgan.name\/posts\/reusable-django-admin-filters\/"},"genre":"posts","keywords":"django, python, code","wordcount":389,"url":"https:\/\/mackenzie.morgan.name\/posts\/reusable-django-admin-filters\/","datePublished":"2021-10-26T00:00:00+00:00","dateModified":"2021-10-26T00:00:00+00:00","publisher":{"@type":"Organization","name":"Mackenzie Morgan"},"author":{"@type":"Person","name":"Mackenzie Morgan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://mackenzie.morgan.name/posts/reusable-django-admin-filters/><link rel=prev href=https://mackenzie.morgan.name/posts/how-to-network/><link rel=next href=https://mackenzie.morgan.name/posts/pretty-waterfalls-in-honeycomb/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Reusable Django Admin Filters","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/mackenzie.morgan.name\/posts\/reusable-django-admin-filters\/"},"genre":"posts","keywords":"django, python, code","wordcount":389,"url":"https:\/\/mackenzie.morgan.name\/posts\/reusable-django-admin-filters\/","datePublished":"2021-10-26T14:14:01-04:00","dateModified":"2021-10-26T14:14:01-04:00","publisher":{"@type":"Organization","name":"Mackenzie Morgan"},"author":{"@type":"Person","name":"Mackenzie Morgan"},"description":""}</script></head>
 <body header-desktop header-mobile><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':''==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:''==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -112,26 +112,26 @@ Problem 1: relations to large tables are unwieldy If we let the Django Admin loa
 </code></pre></div><p>That&rsquo;s mostly standard usage of decorators (defining the <code>wrapper()</code> and then returning it), but since we&rsquo;re trying to define <code>formfield_for_dbfield</code> on the wrapped model, we have to attach it using <code>setattr()</code>.</p>
 <p>Put that at the top of your <code>admin.py</code>. It&rsquo;s more flexible than the original, too. It can operate on more than one field, and it can apply different filters to each named field.</p>
 <p>Here&rsquo;s the basic usage:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=nd>@admin</span><span class=o>.</span><span class=n>register</span><span class=p>(</span><span class=n>Article</span><span class=p>)</span>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=nd>@admin</span><span class=o>.</span><span class=n>register</span><span class=p>(</span><span class=n>MyModel</span><span class=p>)</span>
 <span class=nd>@add_field_filter</span><span class=p>([([</span><span class=s2>&#34;author&#34;</span><span class=p>],</span> <span class=p>{</span><span class=s1>&#39;email__endswith&#39;</span><span class=p>:</span> <span class=s2>&#34;example.com&#34;</span><span class=p>})])</span>
-<span class=n>Class</span> <span class=n>ArticleAdmin</span><span class=p>(</span><span class=n>admin</span><span class=o>.</span><span class=n>ModelAdmin</span><span class=p>):</span>
+<span class=n>Class</span> <span class=n>MyModelAdmin</span><span class=p>(</span><span class=n>admin</span><span class=o>.</span><span class=n>ModelAdmin</span><span class=p>):</span>
 <span class=o>...</span>
 </code></pre></div><h3 id=advanced>Advanced</h3>
 <p>Or, if you needed the same filter on two fields:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=nd>@admin</span><span class=o>.</span><span class=n>register</span><span class=p>(</span><span class=n>Article</span><span class=p>)</span>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=nd>@admin</span><span class=o>.</span><span class=n>register</span><span class=p>(</span><span class=n>MyModel</span><span class=p>)</span>
 <span class=nd>@add_field_filter</span><span class=p>([([</span><span class=s2>&#34;author&#34;</span><span class=p>,</span> <span class=s2>&#34;editor&#34;</span><span class=p>],</span> <span class=p>{</span><span class=s1>&#39;email__endswith&#39;</span><span class=p>:</span> <span class=s2>&#34;example.com&#34;</span><span class=p>})])</span>
-<span class=n>Class</span> <span class=n>ArticleAdmin</span><span class=p>(</span><span class=n>admin</span><span class=o>.</span><span class=n>ModelAdmin</span><span class=p>):</span>
+<span class=n>Class</span> <span class=n>MyModelAdmin</span><span class=p>(</span><span class=n>admin</span><span class=o>.</span><span class=n>ModelAdmin</span><span class=p>):</span>
 <span class=o>...</span>
 </code></pre></div><p>Two filters on one field:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=nd>@admin</span><span class=o>.</span><span class=n>register</span><span class=p>(</span><span class=n>Article</span><span class=p>)</span>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=nd>@admin</span><span class=o>.</span><span class=n>register</span><span class=p>(</span><span class=n>MyModel</span><span class=p>)</span>
 <span class=nd>@add_field_filter</span><span class=p>([([</span><span class=s2>&#34;author&#34;</span><span class=p>],</span> <span class=p>{</span><span class=s1>&#39;email__endswith&#39;</span><span class=p>:</span> <span class=s2>&#34;example.com&#34;</span><span class=p>,</span> <span class=s1>&#39;active&#39;</span><span class=p>:</span> <span class=kc>True</span><span class=p>})])</span>
-<span class=n>Class</span> <span class=n>ArticleAdmin</span><span class=p>(</span><span class=n>admin</span><span class=o>.</span><span class=n>ModelAdmin</span><span class=p>):</span>
+<span class=n>Class</span> <span class=n>MyModelAdmin</span><span class=p>(</span><span class=n>admin</span><span class=o>.</span><span class=n>ModelAdmin</span><span class=p>):</span>
 <span class=o>...</span>
 </code></pre></div><p>Different filters for different fields:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=nd>@admin</span><span class=o>.</span><span class=n>register</span><span class=p>(</span><span class=n>Article</span><span class=p>)</span>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=nd>@admin</span><span class=o>.</span><span class=n>register</span><span class=p>(</span><span class=n>MyModel</span><span class=p>)</span>
 <span class=nd>@add_field_filter</span><span class=p>([([</span><span class=s2>&#34;author&#34;</span><span class=p>],</span> <span class=p>{</span><span class=s1>&#39;email__endswith&#39;</span><span class=p>:</span> <span class=s2>&#34;example.com&#34;</span><span class=p>}),</span>
                    <span class=p>([</span><span class=s2>&#34;editor&#34;</span><span class=p>],</span> <span class=p>{</span><span class=s1>&#39;active&#39;</span><span class=p>:</span> <span class=kc>True</span><span class=p>})])</span>
-<span class=n>Class</span> <span class=n>ArticleAdmin</span><span class=p>(</span><span class=n>admin</span><span class=o>.</span><span class=n>ModelAdmin</span><span class=p>):</span>
+<span class=n>Class</span> <span class=n>MyModelAdmin</span><span class=p>(</span><span class=n>admin</span><span class=o>.</span><span class=n>ModelAdmin</span><span class=p>):</span>
 <span class=o>...</span>
 </code></pre></div><p>Frameworks can easily encourage duplicate code, but the decorator pattern helps. Hopefully this will help you keep your code tidy.</p>
 </div><div class=post-footer id=post-footer>
@@ -155,7 +155,8 @@ Problem 1: relations to large tables are unwieldy If we let the Django Admin loa
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>
 </div>
-<div class=post-nav><a href=/posts/how-to-network/ class=prev rel=prev title="How to Network"><i class="fas fa-angle-left fa-fw"></i>How to Network</a></div>
+<div class=post-nav><a href=/posts/how-to-network/ class=prev rel=prev title="How to Network"><i class="fas fa-angle-left fa-fw"></i>How to Network</a>
+<a href=/posts/pretty-waterfalls-in-honeycomb/ class=next rel=next title="Pretty Waterfalls in Honeycomb">Pretty Waterfalls in Honeycomb<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
 </main><footer class=footer>
