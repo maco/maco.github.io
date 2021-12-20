@@ -1,6 +1,6 @@
 <!doctype html><html lang=en>
 <head>
-<meta name=generator content="Hugo 0.90.1">
+<meta name=generator content="Hugo 0.91.0">
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
@@ -56,6 +56,11 @@
 <main class=main>
 <div class=container><div class="page home" posts><div class=home-profile><div class=home-avatar><a href=/posts/ title=Posts><img class=lazyload src=/svg/loading.min.svg data-src=/images/avatar.jpg data-srcset="/images/avatar.jpg, /images/avatar.jpg 1.5x, /images/avatar.jpg 2x" data-sizes=auto alt=/images/avatar.jpg title=/images/avatar.jpg></a></div><h1 class=home-title>Mackenzie Morgan</h1><div class=links><a href=https://github.com/maco title=GitHub target=_blank rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href=https://twitter.com/maco_nix title=Twitter target=_blank rel="noopener noreffer me"><i class="fab fa-twitter fa-fw"></i></a><a href=https://www.instagram.com/maco.nix title=Instagram target=_blank rel="noopener noreffer me"><i class="fab fa-instagram fa-fw"></i></a><a href=https://keybase.io/maconix title=Keybase target=_blank rel="noopener noreffer me"><i class="fab fa-keybase fa-fw"></i></a><a href=https://stackoverflow.com/users/418929/maco title="Stack Overflow" target=_blank rel="noopener noreffer me"><i class="fab fa-codepen fa-fw"></i></a><a href=https://www.twitch.tv/maco_nix title=Twitch target=_blank rel="noopener noreffer me"><i class="fab fa-twitch fa-fw"></i></a><a href=https://dev.to/maco title=Dev.To target=_blank rel="noopener noreffer me"><i class="fab fa-dev fa-fw"></i></a><a href=mailto:maco@mackenzie.morgan.name title=Email rel=me><i class="far fa-envelope fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
+<a href=/posts/advent-of-code-2021/>Advent of Code 2021</a>
+</h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Mackenzie Morgan</a></span>&nbsp;<span class=post-publish>published on <time datetime=2021-12-19>2021-12-19</time></span>&nbsp;<span class=post-category>included in <a href=/categories/tech/><i class="far fa-folder fa-fw"></i>tech</a></span></div><div class=content>In general, I regard myself as pretty bad at algorithms. I&rsquo;m comfortable enough doing the Elixir track on Exercism (that&rsquo;s how I learned Elixir), and I&rsquo;ve used HackerRank some, but the reason I used HackerRank was because TripleByte said algorithms were my weak point. (It said architecture was my strong suit, and I&rsquo;m quite pleased with that, as I did put effort into improving on that front.) I really dislike white boarding in job interviews (both because of the nerves factor and because the problems are usually totally unrelated to the job) and so much prefer take-homes.</div><div class=post-footer>
+<a href=/posts/advent-of-code-2021/>Read More</a><div class=post-tags>
+<i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/elixir/>elixir</a>,&nbsp;<a href=/tags/advent-of-code/>advent of code</a>,&nbsp;<a href=/tags/erlang/>erlang</a></div></div>
+</article><article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
 <a href=/posts/pretty-waterfalls-in-honeycomb/>Pretty Waterfalls in Honeycomb</a>
 </h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Mackenzie Morgan</a></span>&nbsp;<span class=post-publish>published on <time datetime=2021-10-27>2021-10-27</time></span>&nbsp;<span class=post-category>included in <a href=/categories/tech/><i class="far fa-folder fa-fw"></i>tech</a></span></div><div class=content>When first setting up the Absinthe app I work on, someone added OpenCensus Honeycomb package. The way it was set up was very basic: each top-level query had tracing attached.
 :object queries do field :getStuff, :stuff do meta :trace, true arg :input, :string resolve &Resolver.stuff_resolver/3 end end This got us information on how long each query took, so we could see which query needed to be optimized and do some debugging when performance issues hit.</div><div class=post-footer>
@@ -112,15 +117,6 @@ But what happens when it&rsquo;s an empty list?
 iex(1)> foo = [] [] iex(2)> hd(foo) ** (ArgumentError) argument error :erlang.</div><div class=post-footer>
 <a href=/posts/start-of-a-list/>Read More</a><div class=post-tags>
 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/elixir/>elixir</a>,&nbsp;<a href=/tags/code/>code</a></div></div>
-</article><article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
-<a href=/posts/dang-elixir-is-stable/>Dang, Elixir is stable</a>
-</h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Mackenzie Morgan</a></span>&nbsp;<span class=post-publish>published on <time datetime=2021-03-20>2021-03-20</time></span>&nbsp;<span class=post-category>included in <a href=/categories/tech/><i class="far fa-folder fa-fw"></i>tech</a></span></div><div class=content>On Monday, my manager asked about on-call coverage for the Elixir app I work on. There are only a handful of people in the company who know Elixir, and he was concerned that I would feel like I couldn&rsquo;t take a vacation.
-Him: How often do you get on-call alerts?
-Me: shrug Never 😏
-Him: Wait, what? Do you have them set up? Do they work? 😰
-Me: Yeah, they&rsquo;re set up, and yes, they work, but the interval&mldr;Two weeks ago, another team made a change that affected us without telling us, and that caused an alert.</div><div class=post-footer>
-<a href=/posts/dang-elixir-is-stable/>Read More</a><div class=post-tags>
-<i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/elixir/>elixir</a></div></div>
 </article><ul class=pagination><li class="page-item active">
 <span class=page-link>
 <a href=/>1</a>
@@ -131,7 +127,7 @@ Me: Yeah, they&rsquo;re set up, and yes, they work, but the interval&mldr;Two we
 </span>
 </li></ul></div></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.90.1">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.91.0">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>Mackenzie Morgan</a></span></div>
 </div>
 </footer></div>
