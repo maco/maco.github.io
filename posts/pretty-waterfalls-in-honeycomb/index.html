@@ -4,11 +4,11 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Pretty Waterfalls in Honeycomb - Mackenzie Morgan</title><meta name=Description content>
+<title>Pretty Waterfalls in Honeycomb for an Absinthe app - Mackenzie Morgan</title><meta name=Description content>
 <meta property="og:url" content="https://mackenzie.morgan.name/posts/pretty-waterfalls-in-honeycomb/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mackenzie Morgan">
-<meta property="og:title" content="Pretty Waterfalls in Honeycomb">
+<meta property="og:title" content="Pretty Waterfalls in Honeycomb for an Absinthe app">
 <meta property="og:description" content="When first setting up the Absinthe app I work on, someone added OpenCensus Honeycomb package. The way it was set up was very basic: each top-level query had tracing attached.
 :object queries do field :getStuff, :stuff do meta :trace, true  arg :input, :string resolve &amp;amp;Resolver.stuff_resolver/3 e">
 <meta property="og:image" content="https://mackenzie.morgan.name/tcard/pretty-waterfalls-in-honeycomb.png">
@@ -17,7 +17,7 @@
 <meta name=application-name content="Mackenzie Morgan">
 <meta name=apple-mobile-web-app-title content="Mackenzie Morgan"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://mackenzie.morgan.name/posts/pretty-waterfalls-in-honeycomb/><link rel=prev href=https://mackenzie.morgan.name/posts/reusable-django-admin-filters/><link rel=next href=https://mackenzie.morgan.name/posts/advent-of-code-2021/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Pretty Waterfalls in Honeycomb","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/mackenzie.morgan.name\/posts\/pretty-waterfalls-in-honeycomb\/"},"genre":"posts","keywords":"elixir, code, telemetry, absinthe","wordcount":410,"url":"https:\/\/mackenzie.morgan.name\/posts\/pretty-waterfalls-in-honeycomb\/","datePublished":"2021-10-27T10:14:01-04:00","dateModified":"2021-10-27T10:14:01-04:00","publisher":{"@type":"Organization","name":"Mackenzie Morgan"},"author":{"@type":"Person","name":"Mackenzie Morgan"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://mackenzie.morgan.name/posts/pretty-waterfalls-in-honeycomb/><link rel=prev href=https://mackenzie.morgan.name/posts/reusable-django-admin-filters/><link rel=next href=https://mackenzie.morgan.name/posts/advent-of-code-2021/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Pretty Waterfalls in Honeycomb for an Absinthe app","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/mackenzie.morgan.name\/posts\/pretty-waterfalls-in-honeycomb\/"},"genre":"posts","keywords":"elixir, code, telemetry, absinthe","wordcount":410,"url":"https:\/\/mackenzie.morgan.name\/posts\/pretty-waterfalls-in-honeycomb\/","datePublished":"2021-10-27T10:14:01-04:00","dateModified":"2021-10-27T10:14:01-04:00","publisher":{"@type":"Organization","name":"Mackenzie Morgan"},"author":{"@type":"Person","name":"Mackenzie Morgan"},"description":""}</script></head>
 <body header-desktop header-mobile><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':''==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:''==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -56,7 +56,7 @@
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">Pretty Waterfalls in Honeycomb</h1><div class=post-meta>
+</div><article class="page single"><h1 class="single-title animated flipInX">Pretty Waterfalls in Honeycomb for an Absinthe app</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Mackenzie Morgan</a></span>&nbsp;<span class=post-category>included in <a href=/categories/tech/><i class="far fa-folder fa-fw"></i>tech</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-10-27>2021-10-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;410 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
@@ -138,7 +138,7 @@
 </div>
 </article></div>
 </main><footer class=footer>
-<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
 </div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>Mackenzie Morgan</a></span></div>
 </div>
 </footer></div>
