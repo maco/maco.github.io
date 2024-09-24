@@ -6,4 +6,5 @@
 </span></span><span class="line"><span class="cl">    <span class="n">arg</span> <span class="ss">:input</span><span class="p">,</span> <span class="ss">:string</span>
 </span></span><span class="line"><span class="cl">    <span class="n">resolve</span> <span class="o">&amp;</span><span class="nc">Resolver</span><span class="o">.</span><span class="n">stuff_resolver</span><span class="o">/</span><span class="mi">3</span>
 </span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span></span></span></code></pr]]></description></item></channel></rss>
+</span></span><span class="line"><span class="cl"><span class="k">end</span></span></span></code></pre></div>
+<p>This got us information on how long each query took, so we could see which query needed to be optimized and do some debugging when performance issues hit. But it didn&rsquo;t drill down like I wanted.</p>]]></description></item></channel></rss>
