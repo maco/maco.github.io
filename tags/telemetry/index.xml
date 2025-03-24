@@ -1,10 +1,16 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Telemetry - Tag - Mackenzie Morgan</title><link>https://mackenzie.morgan.name/tags/telemetry/</link><description>Telemetry - Tag - Mackenzie Morgan</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 27 Oct 2021 10:14:01 -0400</lastBuildDate><atom:link href="https://mackenzie.morgan.name/tags/telemetry/" rel="self" type="application/rss+xml"/><item><title>Pretty Waterfalls in Honeycomb for an Absinthe app</title><link>https://mackenzie.morgan.name/posts/pretty-waterfalls-in-honeycomb/</link><pubDate>Wed, 27 Oct 2021 10:14:01 -0400</pubDate><author>Mackenzie Morgan</author><guid>https://mackenzie.morgan.name/posts/pretty-waterfalls-in-honeycomb/</guid><description><![CDATA[<p>When first setting up the Absinthe app I work on, someone added <a href="https://github.com/opencensus-beam/opencensus_honeycomb" target="_blank" rel="noopener noreffer ">OpenCensus Honeycomb package</a>. The way it was set up was very basic: each top-level query had tracing attached.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elixir" data-lang="elixir"><span class="line"><span class="cl"><span class="ss">:object</span> <span class="n">queries</span> <span class="k">do</span>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-elixir">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elixir" data-lang="elixir"><span class="line"><span class="cl"><span class="ss">:object</span> <span class="n">queries</span> <span class="k">do</span>
 </span></span><span class="line"><span class="cl">  <span class="n">field</span> <span class="ss">:getStuff</span><span class="p">,</span> <span class="ss">:stuff</span> <span class="k">do</span>
 </span></span><span class="line hl"><span class="cl">    <span class="n">meta</span> <span class="ss">:trace</span><span class="p">,</span> <span class="no">true</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">arg</span> <span class="ss">:input</span><span class="p">,</span> <span class="ss">:string</span>
 </span></span><span class="line"><span class="cl">    <span class="n">resolve</span> <span class="o">&amp;</span><span class="nc">Resolver</span><span class="o">.</span><span class="n">stuff_resolver</span><span class="o">/</span><span class="mi">3</span>
 </span></span><span class="line"><span class="cl">  <span class="k">end</span>
-</span></span><span class="line"><span class="cl"><span class="k">end</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="cl"><span class="k">end</span></span></span></code></pre></div></div>
+
 <p>This got us information on how long each query took, so we could see which query needed to be optimized and do some debugging when performance issues hit. But it didn&rsquo;t drill down like I wanted.</p>]]></description></item></channel></rss>
